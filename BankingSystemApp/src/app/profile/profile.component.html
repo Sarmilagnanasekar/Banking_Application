@@ -1,0 +1,123 @@
+<app-inside-header></app-inside-header>
+
+<div class="profile-container">
+  <!-- Profile Section -->
+  <div class="profile-header">
+    <img [src]="user?.profileImage || 'assets/profile-image.png'" class="profile-image">
+    <h2>{{ user?.name || 'User Name' }}</h2>
+    <p>{{ user?.email || 'user@example.com' }}</p>
+    <span class="account-type">{{ account?.accountType || 'No Account Found' }}</span>
+  </div>
+
+  <!-- Account Details -->
+  <div class="profile-details">
+    <h3>Account Details</h3>
+    <ng-container *ngIf="account; else noAccount">
+      <p>
+        <strong>Balance:</strong> Rs.{{ account?.balance }} <br>
+        <strong>Account Type:</strong> {{ account?.accountType }} <br>
+       
+      </p>
+    </ng-container>
+    <ng-template #noAccount>
+      <p class="no-data">No account found. Create one to start banking!</p>
+    </ng-template>
+  </div>
+
+<!-- Loan Details -->
+<div class="profile-details">
+  <h3>Loan Details</h3>
+
+  <ng-container *ngIf="loan?.length > 0; else loanRejected">
+    <table class="loan-table">
+      <thead>
+        <tr>
+          <th>Interest Rate (%)</th>
+          <th>Loan Type</th>
+          <th>Amount (Rs.)</th>
+          <th>Status</th>
+          <th>Tenure</th>
+          <th>Term (Months)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of loan">
+          <td>{{ item?.interestRate }}</td>
+          <td>{{ item?.loanType }}</td>
+          <td>{{ item?.loanAmount }}</td>
+          <td>{{ item?.status || 'Unknown' }}</td>
+          <td>{{ item?.tenure }}</td>
+          <td>{{ item?.termMonths }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </ng-container>
+
+  <ng-template #loanRejected>
+    <p class="no-data">Your loan application has been rejected.</p>
+  </ng-template>
+</div>
+
+
+
+   <!-- Loan Details -->
+   <!-- <div class="profile-details">
+    <h3>Loan Details</h3>
+
+    <ng-container *ngIf="loan && loan.length; else loanRejected">
+      <div *ngFor="let key of loan">
+        <p>
+          <strong>{{ key | titlecase }}:</strong> ${{ loan[0][key] || 'N/A' }} <br>
+        </p>
+      </div>
+    </ng-container>
+    
+    <ng-template #loanRejected>
+      <p>No loan details available or loan has been rejected.</p>
+    </ng-template>
+    
+
+  </div> -->
+
+  <!-- Transaction History -->
+  <div class="profile-details">
+    <h3>Transaction History</h3>
+    <div class="transaction-actions">
+      <input type="number" [(ngModel)]="amount" placeholder="Enter amount" class="amount-input" min="1">
+      <button class="btn deposit" (click)="deposit()" [disabled]="!amount">Deposit</button>
+      <button class="btn withdraw" (click)="withdraw()" [disabled]="!amount">Withdraw</button>
+      <button class="btn transfer" (click)="transfer()" [disabled]="!amount">Transfer</button>
+    </div>
+    <ng-container *ngIf="transactions?.length; else noTransactions">
+      <table class="transaction-table">
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th>Amount</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let transaction of transactions | paginate: { itemsPerPage: 10, currentPage: page }">
+            <td [ngClass]="{'credit': transaction.transactionType === 'Credit', 'debit': transaction.transactionType === 'Debit'}">
+              {{ transaction.transactionType }}
+            </td>
+            <td>
+              ${{ transaction.amount }}
+            </td>
+            <td>
+              {{ transaction.transactionDate | date: 'short' }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <pagination-controls (pageChange)="page = $event"></pagination-controls>
+  
+      
+    </ng-container>
+    <ng-template #noTransactions>
+      <p class="no-data">No transactions found.</p>
+    </ng-template>
+   
+  </div>
+</div>

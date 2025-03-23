@@ -1,0 +1,58 @@
+<div class="container">
+  <h2>Transaction History</h2>
+
+  <!-- Search Bar -->
+  <div class="search-container">
+    
+      <input type="text" [(ngModel)]="searchQuery" placeholder="Search transactions..." class="search-box">
+      <button (click)="searchTransactions()" class="btn btn-primary">Search</button>
+  
+    
+  </div>
+  
+  <!-- Export Buttons -->
+  <button (click)="exportToCSV()" class="btn btn-primary">Export to CSV</button>
+  <button (click)="exportToPDF()" class="btn btn-danger">Export to PDF</button>
+
+  <!-- Loading Spinner -->
+  <div *ngIf="loading" class="spinner"></div>
+
+  <!-- Transactions Table -->
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Account Number</th>
+        <th>User</th>
+        <th>Amount</th>
+        <th>Transaction Type</th>
+        <th>Description</th>
+        <th>Date</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let transaction of filteredTransactions | paginate: { itemsPerPage: itemsPerPage, currentPage: currentPage }">
+        <td>{{ transaction.transactionId }}</td>
+        <td>{{ transaction.account?.accountId || 'N/A' }}</td>
+        <td>{{ transaction.user?.name || 'N/A' }}</td>
+        <td>{{ transaction.amount | currency }}</td>
+        <td>{{ transaction.transactionType }}</td>
+        <td>{{ transaction.description }}</td>
+        <td>{{ transaction.transactionDate | date:'short' }}</td>
+        <td>{{ transaction.status }}</td>
+       
+      </tr>
+    </tbody>
+  </table>
+  
+  <!-- Pagination Controls -->
+<pagination-controls
+(pageChange)="currentPage = $event"
+class="pagination-container">
+</pagination-controls>
+
+ 
+
+</div>

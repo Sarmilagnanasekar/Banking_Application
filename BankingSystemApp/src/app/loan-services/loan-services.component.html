@@ -1,0 +1,16 @@
+<app-header></app-header>
+<div class="loan-services-container">
+  <!-- Scrolling Apply Now Banner -->
+  <div class="apply-now-banner">APPLY NOW APPLY NOW APPLY NOW APPLY NOW APPLY NOW APPLY NOW APPLY NOW APPLY NOW APPLY NOW APPLY NOW</div>
+  
+  <h2 class="loan-services-title">Our Loan Services</h2>
+  <div class="loan-list">
+    <div class="loan-card" *ngFor="let loan of loans">
+      <img [src]="loan.logo" [alt]="loan.name" class="loan-logo" />
+      <h3>{{ loan.name }}</h3>
+      <p>{{ loan.description }}</p>
+      
+      <button class="apply-now-blue-btn" (click)="applyNow()">Apply Now</button>
+    </div>
+  </div>
+</div>

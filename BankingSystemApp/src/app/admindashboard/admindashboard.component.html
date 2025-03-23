@@ -1,0 +1,46 @@
+<app-inside-header></app-inside-header>
+
+<div class="admin-dashboard">
+  <div class="main-content">
+    <h2>Admin Dashboard</h2>
+
+    <div class="dashboard-sections">
+      <!-- View All Users Section -->
+      <section class="card users">
+        <h3>View All Users & Accounts</h3>
+        <button [routerLink]="['/user']" class="btn">View Users 📋</button>
+      
+       
+
+        <div *ngIf="!users || users.length === 0">
+          <p>No users available.</p>
+        </div>
+      </section>
+
+      <!-- Account Management Section -->
+      <section class="card accounts">
+        <h3>Account Management</h3>
+        <button [routerLink]="['/account']" class="btn">View Accounts</button>
+        <div *ngIf="accounts && accounts.length > 0">
+          <ul>
+            <li *ngFor="let account of accounts">{{ account.name }} ({{ account.type }})</li>
+          </ul>
+        </div>
+       
+      </section>
+
+      <!-- Loan Management Section -->
+      <section class="card loans">
+        <h3>Loan Management</h3>
+        <button [routerLink]="['/loan']" class="btn">View Loans</button>
+      </section>
+
+      <!-- Transaction Monitoring Section -->
+      <section class="card transactions">
+        <h3>Transaction Monitoring</h3>
+        <button [routerLink]="['/transaction']" class="btn">View Transactions</button>
+        
+      </section>
+    </div>
+  </div>
+</div>

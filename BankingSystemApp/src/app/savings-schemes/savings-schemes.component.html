@@ -1,0 +1,14 @@
+<app-header></app-header>
+<div class="savings-schemes-container">
+  <h2 class="savings-schemes-title">Our Savings Schemes</h2>
+  <div class="savings-list">
+    <div class="savings-card" *ngFor="let scheme of savingsSchemes; let i = index" [@fadeInDelay]="i">
+      <img [src]="scheme.logo" [alt]="scheme.name" class="savings-logo" />
+      <h3>{{ scheme.name }}</h3>
+      <p>{{ scheme.description }}</p>
+      <div class="button-container">
+        <button class="apply-now-blue-btn" (click)="applyNow(scheme.name)">Apply Now</button>
+      </div>
+    </div>
+  </div>
+</div>

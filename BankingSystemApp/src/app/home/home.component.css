@@ -1,0 +1,69 @@
+.home-container {
+    position: relative;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.home-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+}
+
+.bank-info {
+    position: relative;
+    z-index: 1;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5); /* Darken background for better readability */
+    border-radius: 10px;
+    max-width: 600px;
+    color: #fff;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.tagline {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #f0c040; /* Gold color for contrast */
+    margin-bottom: 10px;
+}
+
+.description {
+    font-size: 1.2rem;
+    font-weight: 300;
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+/* Logos Section */
+.logos-container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.bank-logo {
+    width: 80px;
+    height: auto;
+    margin: 0 15px;
+    filter: brightness(1.2);
+}

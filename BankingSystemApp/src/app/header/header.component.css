@@ -1,0 +1,67 @@
+/* Header container */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #031E3E; /* Dark Blue - Matches Footer */
+    padding: 15px 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Logo + Bank Name */
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+  }
+  
+  .bank-name {
+    font-size: 26px;
+    font-weight: bold;
+    color:white ; 
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+  }
+  
+  /* Navigation buttons */
+  .nav-buttons {
+    display: flex;
+    gap: 15px;
+  }
+  
+  /* Default Button Styling */
+  .btn {
+    background: #007bff; /* Sky Blue */
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 2px 2px 8px rgba(0, 123, 255, 0.3);
+  }
+  
+  /* Hover effect: Bigger & Darker */
+  .btn:hover {
+    background: #0056b3; /* Darker Blue */
+    box-shadow: 3px 3px 12px rgba(0, 123, 255, 0.5);
+    transform: scale(1.08);
+  }
+  
+  /* Admin login button */
+  .admin-btn {
+    background: #0056b3; /* Darker Sky Blue */
+  }
+  
+  .admin-btn:hover {
+    background: #003d82; /* Even Darker Blue */
+    transform: scale(1.08);
+  }
+  

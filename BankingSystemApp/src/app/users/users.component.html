@@ -1,0 +1,41 @@
+<app-inside-header></app-inside-header>
+<div class="users-container">
+    <h2>Users List</h2>
+
+    <!-- Add User Form -->
+    <div class="add-user-form">
+        <input type="text" placeholder="Name" [(ngModel)]="newUser.name">
+        <input type="email" placeholder="Email" [(ngModel)]="newUser.email">
+        <input type="password" placeholder="Password" [(ngModel)]="newUser.password">
+        <button class="add-btn" (click)="addUser()">Add User</button>
+    
+    </div>
+
+    <!-- Users Table -->
+    <table *ngIf="users.length > 0; else noUsers">
+      <thead>
+        <tr>
+         
+          <th>Name</th>
+          <th>Email</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+         
+          <td>{{ user.name }}</td>
+          <td>{{ user.email }}</td>
+          <td>
+           
+            <button class="update-btn" (click)="updateUser(user)">Update</button>
+            <button class="delete-btn" (click)="deleteUser(user)">Delete</button> 
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <ng-template #noUsers>
+      <p>No users found.</p>
+    </ng-template>
+</div>

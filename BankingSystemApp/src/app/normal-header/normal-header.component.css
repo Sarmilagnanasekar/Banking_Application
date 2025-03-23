@@ -1,0 +1,33 @@
+/* Header Styling */
+.logout-header {
+    background-color: #031E3E; /* Matching footer color */
+    padding: 15px 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+  }
+  
+  /* Logo Section */
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo img {
+    height: 50px;
+    margin-right: 10px;
+  }
+  
+  .bank-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: white; /* Always white */
+  }
+  
+  

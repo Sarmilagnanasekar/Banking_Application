@@ -1,0 +1,54 @@
+<app-inside-header></app-inside-header>
+<div class="content">
+    <h1>Account Management</h1>
+
+    <!-- Add New Account Form -->
+    <form (ngSubmit)="createAccount()">
+        <label for="accountHolderName">Account Holder Name:</label>
+        <input type="text" [(ngModel)]="account.accountHolderName" name="accountHolderName" required>
+
+        <label for="email">Email:</label>
+        <input type="email" [(ngModel)]="account.email" name="email" required>
+
+        <label for="balance">Initial Balance ($):</label>
+        <input type="number" [(ngModel)]="account.balance" name="balance" required>
+
+        <label for="accountType">Account Type:</label>
+        <select [(ngModel)]="account.accountType" name="accountType" required>
+            <option value="SAVINGS">Savings</option>
+            <option value="CURRENT">Current</option>
+            <option value="RECURRING_DEPOSIT">Recurring Deposit (RD)</option>
+            <option value="FIXED_DEPOSIT">Fixed Deposit (FD)</option>
+        </select>
+
+        <button type="submit">Create Account</button>
+    </form>
+
+    <!-- Account List -->
+    <h2>Account List</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Account Holder</th>
+                <th>Email</th>
+                <th>Balance ($)</th>
+                <th>Account Type</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let account of accounts">
+                <td>{{ account.accountId }}</td>
+                <td>{{ account.accountHolderName }}</td>
+                <td>{{ account.email }}</td>
+                <td>{{ account.balance }}</td>
+                <td>{{ account.accountType }}</td>
+                <td>
+                    <button (click)="updateAccount(account)">Edit</button>
+                    <button (click)="deleteAccount(account.accountId)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

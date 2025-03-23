@@ -1,0 +1,158 @@
+/* General Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f5f7fa;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.profile-container {
+  max-width: 900px;
+  margin: 20px auto;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-header {
+  text-align: center;
+}
+
+.profile-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  border: 3px solid #4caf50;
+}
+
+.account-type {
+  background: #4caf50;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+/* Transaction Table */
+.transaction-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.transaction-table th, .transaction-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.transaction-table th {
+  background: #2196F3;
+  color: white;
+}
+
+.transaction-table tr:hover {
+  background: #f1f1f1;
+}
+
+/* Debit & Credit Colors */
+.debit {
+  color: red;
+  font-weight: bold;
+}
+.credit {
+  color: green;
+  font-weight: bold;
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+
+.deposit {
+  background: #4CAF50;
+  color: white;
+}
+
+.withdraw {
+  background: #FF5733;
+  color: white;
+}
+
+.transfer {
+  background: #FFC107;
+  color: black;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  padding: 5px 10px;
+  border: none;
+  margin: 0 5px;
+  cursor: pointer;
+  background: #2196F3;
+  color: white;
+  border-radius: 5px;
+}
+
+.pagination button:hover {
+  background: #1976D2;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.profile-container, .profile-header, .transaction-table, .action-buttons {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.loan-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.loan-table th, .loan-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.loan-table th {
+  background-color: #007bff;
+  color: white;
+}
+

@@ -1,0 +1,89 @@
+/* Loan Services Container */
+.loan-services-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  background-color: #f8f9fa;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Loan Services Title */
+.loan-services-title {
+  margin-top: 60px; /* Adjusted to avoid overlap */
+}
+
+/* Scrolling Apply Now Banner */
+.apply-now-banner {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 100%;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  background-color: red;
+  padding: 10px;
+  text-align: center;
+  animation: scrollBanner 8s linear infinite;
+}
+
+@keyframes scrollBanner {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+/* Loan List */
+.loan-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 1100px;
+  margin-top: 50px;
+}
+
+/* Loan Cards */
+.loan-card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  width: 250px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.loan-card:hover {
+  transform: scale(1.05);
+}
+
+/* Loan Logos */
+.loan-logo {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 10px;
+}
+
+/* Apply Now Button */
+.apply-now-blue-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin-top: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.apply-now-blue-btn:hover {
+  background-color: #0056b3;
+}

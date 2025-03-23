@@ -1,0 +1,62 @@
+.loan-container {
+  max-width: 800px;
+  margin: auto;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 1s ease-in-out;
+}
+
+.loan-form {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.apply-btn {
+  width: 100%;
+  margin-top: 10px;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.apply-btn:hover {
+  background-color: #28a745;
+  transform: scale(1.05);
+}
+
+.loan-table {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.thead-dark th {
+  background-color: #343a40 !important;
+  color: white;
+}
+
+tr.animate-row {
+  animation: slideIn 0.5s ease-in-out;
+}
+
+.delete-btn {
+  transition: 0.3s;
+}
+
+.delete-btn:hover {
+  background-color: red;
+  transform: scale(1.1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}

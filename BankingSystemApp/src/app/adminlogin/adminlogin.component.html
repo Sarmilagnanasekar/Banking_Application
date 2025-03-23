@@ -1,0 +1,38 @@
+<app-normal-header></app-normal-header>
+<div class="forgot-password-page" 
+     style="background: url('assets/background.png') no-repeat center center/cover; 
+            height: 100vh; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center;">
+
+  <div class="login-container" [ngClass]="{ 'shake': isShaking }">
+    <h2>Admin Login</h2>
+    <form (ngSubmit)="login()">
+      <label for="username">Username</label>
+      <input 
+        type="text" 
+        id="username" 
+        [(ngModel)]="username" 
+        name="username"
+        placeholder="Enter your username"
+        required
+        autocomplete="off"
+      />
+  
+      <label for="password">Password</label>
+      <input 
+        type="password" 
+        id="password" 
+        [(ngModel)]="password" 
+        name="password"
+        placeholder="Enter your password"
+        required
+      />
+  
+      <button type="submit" class="login-btn">Login</button>
+  
+      <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+    </form>
+  </div>
+</div>
